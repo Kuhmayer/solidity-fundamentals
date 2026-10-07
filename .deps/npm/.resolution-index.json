@@ -6,5 +6,13 @@
         "file": "Counter.sol"
       }
     }
+  },
+  "ProposalContract.sol": {
+    "__sources__": {
+      "ProposalContract.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.18;\ncontract ProposalContract {\n    // Our contract code\n\n    struct Proposal {\n        string description; // Description of the proposal\n        uint256 approve; // Number of approve votes\n        uint256 reject; // Number of reject votes\n        uint256 pass; // Number of pass votes\n        uint256 total_vote_to_end; // When the total votes in the proposal reaches this limit, proposal ends\n        bool current_state; // This shows the current state of the proposal, meaning whether if passes of fails\n        bool is_active; // This shows if others can vote to our contract\n    }\n\n    mapping(uint256 => Proposal) proposal_history; // Recordings of previous proposals\n}\n",
+        "file": "ProposalContract.sol"
+      }
+    }
   }
 }
