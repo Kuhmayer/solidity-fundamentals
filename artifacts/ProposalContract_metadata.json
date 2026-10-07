@@ -4,7 +4,26 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_total_vote_to_end",
+						"type": "uint256"
+					}
+				],
+				"name": "create",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -33,11 +52,11 @@
 	},
 	"sources": {
 		"ProposalContract.sol": {
-			"keccak256": "0x3ae094db19d018733bc2354204554beaa6590fac3f0e13dc8c3f13085752968f",
+			"keccak256": "0x7fb37274753fb11bb6cd79ca4302a6e245e716e6dcf7bb311b4cc9ee93922964",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f0e3eb1ddf4d925a6b8340c9e4c3b6c5ffa071f014ee1d21d2098bb25fba1bd4",
-				"dweb:/ipfs/QmaZ74BN4xVQWq5Zt3aKjTyYmtf3W6JHR9cnm7U78kNJt4"
+				"bzz-raw://01121cd812cec664456bbfb4992710b0889bae26c8b91168b1e1e74f43e82dc0",
+				"dweb:/ipfs/QmP2SJSQFMNvLrZrB9CSu1zVNUphhXHAigvD2hdjfZRkzz"
 			]
 		}
 	},
