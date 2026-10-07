@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -19,6 +24,19 @@
 					}
 				],
 				"name": "create",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "choice",
+						"type": "uint8"
+					}
+				],
+				"name": "vote",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -52,11 +70,11 @@
 	},
 	"sources": {
 		"ProposalContract.sol": {
-			"keccak256": "0x7fb37274753fb11bb6cd79ca4302a6e245e716e6dcf7bb311b4cc9ee93922964",
+			"keccak256": "0xabde3f3783f900a0c390ffc1d5742c4aa12f738a2386503d8dc36e446c498ef1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://01121cd812cec664456bbfb4992710b0889bae26c8b91168b1e1e74f43e82dc0",
-				"dweb:/ipfs/QmP2SJSQFMNvLrZrB9CSu1zVNUphhXHAigvD2hdjfZRkzz"
+				"bzz-raw://fb927feed82c9d3a42320ea81ca8799d3e62eb59c8c48a65daad9165cbbf24c9",
+				"dweb:/ipfs/QmbAZ4m6Z6ERjXf8UPMdA5bjV5gUsDovanQkYeSWn2D3jt"
 			]
 		}
 	},
