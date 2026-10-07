@@ -62,10 +62,13 @@ contract ProposalContract {
             false,
             true
         );
+
+        voted_addresses = [owner];
     }
 
-    function vote(uint8 choice) external {
+    function vote(uint8 choice) external active newVoter(msg.sender) {
         // Function logic
+        require(choice <= 2, "Invalid choice: 0=Pass, 1=Approve, 2=Reject");
 
         // First part
         Proposal storage proposal = proposal_history[counter];
@@ -87,7 +90,7 @@ contract ProposalContract {
 
         // Third part
         if (
-            (proposal.total_vote_to_end - total_vote == 1) &&
+            (total_vote + 1 >= proposal.total_vote_to_end) &&
             (choice == 1 || choice == 2 || choice == 0)
         ) {
             proposal.is_active = false;
@@ -113,5 +116,28 @@ contract ProposalContract {
         } else {
             return false;
         }
+    }
+
+    function teminateProposal() external onlyOwner active {
+        proposal_history[counter].is_active = false;
+    }
+
+    function isVoted(address _address) public view returns (bool) {
+        for (uint i = 0; i < voted_addresses.length; i++) {
+            if (voted_addresses[i] == _address) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function getCurrentProposal() external view returns (Proposal memory) {
+        return proposal_history[counter];
+    }
+
+    function getProposal(
+        uint256 number
+    ) external view returns (Proposal memory) {
+        return proposal_history[number];
     }
 }
